@@ -12,6 +12,7 @@ In tennis, wins and losses are not only about point competition, but also about 
 ### 1.2 Restatement of the Problem
 
 We need to model the following questions based on the data：
+
 ![image](https://github.com/nanase1025/SHAP-LSTM-Momentum-Fluctuation-Prediction-Solution-to-2024-MCM-Problem-C-/assets/145645749/8b251ff4-12e6-4d02-a69c-a929c9bb3f4f)
 
 Problem 1: Create a model that captures changes in scores during a match, identifies which players perform better at key moments, and provides a model-based visualization of the flow of the match, given that the serve side wins more often in tennis.
@@ -29,6 +30,7 @@ This repository is mainly about our solution to Problem 3.
 ## 2. SHAP-LSTM Momentum Fluctuation Prediction
 
 To develop a model that utilizes data from at least one match to predict turning points in the game and to identify the most relevant factors, we constructed the SHAP-LSTM Momentum Fluctuation Prediction Model, as shown in Figure below.
+
 ![image](https://github.com/nanase1025/SHAP-LSTM-Momentum-Fluctuation-Prediction-Solution-to-2024-MCM-Problem-C-/assets/145645749/6a8b8d35-5050-4133-ba2e-ad23b38cc636)
 
 ### 2.1 Data Processing
@@ -44,11 +46,13 @@ Long Short-Term Memory networks (LSTMs) are a variant of Recurrent Neural Networ
 The popularity of LSTMs stems from their ability to capture and remember dependencies in long sequences while preventing gradient issues. This is achieved through the introduction of three key gating mechanisms, including the forget gate, input gate, and output gate. Each gate is controlled by a sigmoid activation function, working together to determine which information should be retained, ignored, or output.
 
 In this study, the LSTM model architecture for this task is designed with 512 hidden layers, each containing a large number of hidden units to capture complex patterns in the data. Additionally, it includes a linear layer to map the output of the LSTM layers to the dimensions of the prediction target. Such design aims to provide sufficient model capacity to learn and understand the complex relationships from input features to predicted momentum fluctuations.
+
 ![image](https://github.com/nanase1025/SHAP-LSTM-Momentum-Fluctuation-Prediction-Solution-to-2024-MCM-Problem-C-/assets/145645749/f16fd70b-412e-4757-8a5f-3fe24223ac2b)
 
 #### 2.2.2 Model Construction
 
 Model Construction 80% of the data is used as the training set and 20% as the test set. The model's hyperparameters and optimization strategy are set according to the Table below, and the training set is fitted to obtain the loss function shown in Figure below.
+
 ![image](https://github.com/nanase1025/SHAP-LSTM-Momentum-Fluctuation-Prediction-Solution-to-2024-MCM-Problem-C-/assets/145645749/ec63717a-54bf-4c5a-8d93-9f2a0b415df7)
 
 ![image](https://github.com/nanase1025/SHAP-LSTM-Momentum-Fluctuation-Prediction-Solution-to-2024-MCM-Problem-C-/assets/145645749/ac8ca462-e000-4741-94c5-064f46512ae8)
